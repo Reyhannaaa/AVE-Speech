@@ -14,7 +14,7 @@ from lr_scheduler import *
 from emg_model import *
 from emg_dataset import *
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 SEED = 5
@@ -219,7 +219,7 @@ def main():
     parser.add_argument('--test', default=False, action='store_true', help='perform on the test phase')
     args = parser.parse_args()
      
-    os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+    os.environ['CUDA_VISIBLE_DEVICES'] = '2'
     use_gpu = torch.cuda.is_available()
     test_adam(args, use_gpu)
 

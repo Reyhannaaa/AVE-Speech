@@ -11,7 +11,7 @@ import cv2
 from python_speech_features import mfcc
 from matplotlib.pyplot import figure
 from matplotlib import pyplot as plt
-from cvtransforms import *
+# from cvtransforms import *
 
 
 def filter(raw_data):
@@ -61,52 +61,39 @@ class MyDataset():
         valList = []
         tstList = []
 
-        emg_subject_list = np.load('/ai/exp2/fusion_baseline_231205_new/emg_subject.npy')
-        emg_subject_list = emg_subject_list.tolist()
+        # 1. Dynamically find subject folders in your directory cleanly
+        emg_subject_list = sorted([os.path.join(dir, folder) for folder in os.listdir(dir) if folder.startswith('Subj')])
 
-        # training dataset
-        for i in range(70):
-            emg_dataset = emg_subject_list[i]
-            sessions = os.listdir(emg_dataset)
-            for session in sessions:
-                samples = os.listdir(emg_dataset + '/' + str(session))
-                for sample in samples:
-                    label = sample.split('.')[0]
-                    emgpath = emg_dataset + '/' + session + '/' + sample
-                    entry = (label, emgpath)
-                    trnList.append(entry)
+        # 2. Helper parsing logic to extract structural targets safely
+        def parse_folder(subjects_subset, target_list):
+            for emg_dataset in subjects_subset:
+                sessions = sorted(os.listdir(emg_dataset))
+                for session in sessions:
+                    session_path = os.path.join(emg_dataset, session)
+                    if not os.path.isdir(session_path):
+                        continue
+                    samples = os.listdir(session_path)
+                    for sample in samples:
+                        # Only grab the EMG files, skipping the companion audio wav files
+                        if sample.endswith('_emg.mat'):
+                            # Filename: Subj001_Sess01_Sent000_emg.mat
+                            # split('_emg.mat')[0] -> Subj001_Sess01_Sent000
+                            # split('Sent')[-1] -> 000
+                            try:
+                                label = sample.split('_emg.mat')[0].split('Sent')[-1]
+                                emgpath = os.path.join(session_path, sample)
+                                target_list.append((label, emgpath))
+                            except ValueError:
+                                continue
 
-
-        # validation dataset
-        for i in range(10):
-            emg_dataset = emg_subject_list[i+70]
-            sessions = os.listdir(emg_dataset)
-            for session in sessions:
-                samples = os.listdir(emg_dataset + '/' + str(session))
-                for sample in samples:
-                    label = sample.split('.')[0]
-                    emgpath = emg_dataset + '/' + session + '/' + sample
-                    entry = (label, emgpath)
-                    valList.append(entry)
-
-
-        # testing dataset
-        for i in range(20):
-            emg_dataset = emg_subject_list[i+80]
-            sessions = os.listdir(emg_dataset)
-            for session in sessions:
-                samples = os.listdir(emg_dataset + '/' + str(session))
-                for sample in samples:
-                    label = sample.split('.')[0]
-                    emgpath = emg_dataset + '/' + session + '/' + sample
-                    entry = (label, emgpath)
-                    tstList.append(entry)
-
+        # Split 70 / 10 / 20 subjects strictly per the paper's design
+        parse_folder(emg_subject_list[:70], trnList)
+        parse_folder(emg_subject_list[70:80], valList)
+        parse_folder(emg_subject_list[80:], tstList)
 
         random.shuffle(trnList)
         random.shuffle(tstList)
         random.shuffle(valList)
-
 
         if set == 'train':
             return trnList

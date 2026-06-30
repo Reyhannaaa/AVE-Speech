@@ -103,13 +103,15 @@ class GRU(nn.Module):
         self.gru = nn.GRU(input_size, hidden_size, num_layers, batch_first=True, bidirectional=True)
         self.fc = nn.Linear(hidden_size*2, num_classes)
 
-    def forward(self, x):
+    def forward(self, x, return_features=False):
         h0 = Variable(torch.zeros(self.num_layers*2, x.size(0), self.hidden_size))
-        out, _ = self.gru(x, h0)
+        feat, _ = self.gru(x, h0)  # (B, T, hidden*2) pre-classifier latent
         if self.every_frame:
-            out = self.fc(out)  # predicitions based on every time step
+            out = self.fc(feat)  # predicitions based on every time step
         else:
-            out = self.fc(out[:, -1, :])  # predictions based on the last time step
+            out = self.fc(feat[:, -1, :])  # predictions based on the last time step
+        if return_features:
+            return out, feat
         return out
 
 
@@ -188,7 +190,7 @@ class EMGNet(nn.Module):
         # initialize
         self._initialize_weights()
 
-    def forward(self, x):
+    def forward(self, x, return_features=False):
         batch_size = x.size(0)
         x = self.fronted2D(x)
         x = self.fronted2D1(x)
@@ -198,8 +200,8 @@ class EMGNet(nn.Module):
         x = self.fronted2D5(x)
         x = self.fronted2D6(x)
         x = self.fronted2D7(x)
-     
-        
+
+
         if self.mode == 'temporalConv':
             x = x.view(batch_size, -1, self.inputDim)
             x = x.transpose(1, 2)
@@ -208,7 +210,7 @@ class EMGNet(nn.Module):
             x = self.backend_conv2(x)
         elif self.mode == 'backendGRU' or self.mode == 'finetuneGRU':
             x = x.view(batch_size, -1, self.inputDim)
-            x = self.gru(x)
+            return self.gru(x, return_features=return_features)
         else:
             raise Exception('No model is selected')
         return x

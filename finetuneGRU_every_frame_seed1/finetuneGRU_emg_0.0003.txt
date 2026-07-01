@@ -1,0 +1,356 @@
+train from scratch
+----------
+Epoch 0/49
+Current Learning rate: [0.0003]
+train Epoch:	 0	Loss: 4.2193	Acc:0.0474
+
+val Epoch:	 0	Loss: 3.7475	Acc:0.1048
+
+----------
+Epoch 1/49
+Current Learning rate: [0.0003]
+train Epoch:	 1	Loss: 3.1961	Acc:0.1822
+
+val Epoch:	 1	Loss: 2.8189	Acc:0.2575
+
+----------
+Epoch 2/49
+Current Learning rate: [0.0003]
+train Epoch:	 2	Loss: 2.5653	Acc:0.3129
+
+val Epoch:	 2	Loss: 2.3541	Acc:0.3682
+
+----------
+Epoch 3/49
+Current Learning rate: [0.0003]
+train Epoch:	 3	Loss: 2.1479	Acc:0.4128
+
+val Epoch:	 3	Loss: 2.1339	Acc:0.4283
+
+----------
+Epoch 4/49
+Current Learning rate: [0.0003]
+train Epoch:	 4	Loss: 1.8803	Acc:0.4809
+
+val Epoch:	 4	Loss: 1.9110	Acc:0.4855
+
+----------
+Epoch 5/49
+Current Learning rate: [0.0003]
+train Epoch:	 5	Loss: 1.6862	Acc:0.5255
+
+val Epoch:	 5	Loss: 1.7705	Acc:0.5211
+
+----------
+Epoch 6/49
+Current Learning rate: [0.0003]
+train Epoch:	 6	Loss: 1.5543	Acc:0.5615
+
+val Epoch:	 6	Loss: 1.7004	Acc:0.5406
+
+----------
+Epoch 7/49
+Current Learning rate: [0.0003]
+train Epoch:	 7	Loss: 1.4304	Acc:0.5944
+
+val Epoch:	 7	Loss: 1.6523	Acc:0.5651
+
+----------
+Epoch 8/49
+Current Learning rate: [0.0003]
+train Epoch:	 8	Loss: 1.3476	Acc:0.6168
+
+val Epoch:	 8	Loss: 1.6000	Acc:0.5791
+
+----------
+Epoch 9/49
+Current Learning rate: [0.0003]
+train Epoch:	 9	Loss: 1.2571	Acc:0.6416
+
+val Epoch:	 9	Loss: 1.4796	Acc:0.6062
+
+----------
+Epoch 10/49
+Current Learning rate: [0.0003]
+train Epoch:	10	Loss: 1.1822	Acc:0.6603
+
+val Epoch:	10	Loss: 1.4769	Acc:0.6143
+
+----------
+Epoch 11/49
+Current Learning rate: [0.0003]
+train Epoch:	11	Loss: 1.1370	Acc:0.6723
+
+val Epoch:	11	Loss: 1.4400	Acc:0.6215
+
+----------
+Epoch 12/49
+Current Learning rate: [0.0003]
+train Epoch:	12	Loss: 1.0854	Acc:0.6875
+
+val Epoch:	12	Loss: 1.4308	Acc:0.6330
+
+----------
+Epoch 13/49
+Current Learning rate: [0.0003]
+train Epoch:	13	Loss: 1.0349	Acc:0.6984
+
+val Epoch:	13	Loss: 1.4422	Acc:0.6305
+
+----------
+Epoch 14/49
+Current Learning rate: [0.0003]
+train Epoch:	14	Loss: 0.9820	Acc:0.7149
+
+val Epoch:	14	Loss: 1.4069	Acc:0.6407
+
+----------
+Epoch 15/49
+Current Learning rate: [0.0003]
+train Epoch:	15	Loss: 0.9479	Acc:0.7218
+
+val Epoch:	15	Loss: 1.3681	Acc:0.6511
+
+----------
+Epoch 16/49
+Current Learning rate: [0.0003]
+train Epoch:	16	Loss: 0.9092	Acc:0.7346
+
+val Epoch:	16	Loss: 1.3881	Acc:0.6535
+
+----------
+Epoch 17/49
+Current Learning rate: [0.0003]
+train Epoch:	17	Loss: 0.8752	Acc:0.7444
+
+val Epoch:	17	Loss: 1.3557	Acc:0.6619
+
+----------
+Epoch 18/49
+Current Learning rate: [0.0003]
+train Epoch:	18	Loss: 0.8422	Acc:0.7527
+
+val Epoch:	18	Loss: 1.3316	Acc:0.6695
+
+----------
+Epoch 19/49
+Current Learning rate: [0.0003]
+train Epoch:	19	Loss: 0.8218	Acc:0.7572
+
+val Epoch:	19	Loss: 1.2718	Acc:0.6857
+
+----------
+Epoch 20/49
+Current Learning rate: [0.0002611651689888372]
+train Epoch:	20	Loss: 0.7673	Acc:0.7708
+
+val Epoch:	20	Loss: 1.2792	Acc:0.6843
+
+----------
+Epoch 21/49
+Current Learning rate: [0.00022735748497655967]
+train Epoch:	21	Loss: 0.7338	Acc:0.7811
+
+val Epoch:	21	Loss: 1.2959	Acc:0.6860
+
+----------
+Epoch 22/49
+Current Learning rate: [0.00019792618661593412]
+train Epoch:	22	Loss: 0.6919	Acc:0.7939
+
+val Epoch:	22	Loss: 1.3280	Acc:0.6795
+
+----------
+Epoch 23/49
+Current Learning rate: [0.00017230475324955523]
+train Epoch:	23	Loss: 0.6563	Acc:0.8034
+
+val Epoch:	23	Loss: 1.2882	Acc:0.6911
+
+----------
+Epoch 24/49
+Current Learning rate: [0.00015]
+train Epoch:	24	Loss: 0.6317	Acc:0.8100
+
+val Epoch:	24	Loss: 1.2866	Acc:0.6936
+
+----------
+Epoch 25/49
+Current Learning rate: [0.0001305825844944186]
+train Epoch:	25	Loss: 0.6035	Acc:0.8178
+
+val Epoch:	25	Loss: 1.2534	Acc:0.7031
+
+----------
+Epoch 26/49
+Current Learning rate: [0.00011367874248827986]
+train Epoch:	26	Loss: 0.5821	Acc:0.8238
+
+val Epoch:	26	Loss: 1.2453	Acc:0.7010
+
+----------
+Epoch 27/49
+Current Learning rate: [9.896309330796706e-05]
+train Epoch:	27	Loss: 0.5634	Acc:0.8288
+
+val Epoch:	27	Loss: 1.2858	Acc:0.6994
+
+----------
+Epoch 28/49
+Current Learning rate: [8.615237662477761e-05]
+train Epoch:	28	Loss: 0.5457	Acc:0.8335
+
+val Epoch:	28	Loss: 1.2793	Acc:0.7007
+
+----------
+Epoch 29/49
+Current Learning rate: [7.5e-05]
+train Epoch:	29	Loss: 0.5285	Acc:0.8401
+
+val Epoch:	29	Loss: 1.2657	Acc:0.7056
+
+----------
+Epoch 30/49
+Current Learning rate: [6.52912922472093e-05]
+train Epoch:	30	Loss: 0.5127	Acc:0.8426
+
+val Epoch:	30	Loss: 1.2966	Acc:0.7009
+
+----------
+Epoch 31/49
+Current Learning rate: [5.683937124413993e-05]
+train Epoch:	31	Loss: 0.5052	Acc:0.8458
+
+val Epoch:	31	Loss: 1.2794	Acc:0.7033
+
+----------
+Epoch 32/49
+Current Learning rate: [4.948154665398353e-05]
+train Epoch:	32	Loss: 0.4929	Acc:0.8485
+
+val Epoch:	32	Loss: 1.2514	Acc:0.7119
+
+----------
+Epoch 33/49
+Current Learning rate: [4.3076188312388814e-05]
+train Epoch:	33	Loss: 0.4829	Acc:0.8510
+
+val Epoch:	33	Loss: 1.2602	Acc:0.7109
+
+----------
+Epoch 34/49
+Current Learning rate: [3.75e-05]
+train Epoch:	34	Loss: 0.4751	Acc:0.8545
+
+val Epoch:	34	Loss: 1.2433	Acc:0.7130
+
+----------
+Epoch 35/49
+Current Learning rate: [3.264564612360465e-05]
+train Epoch:	35	Loss: 0.4736	Acc:0.8547
+
+val Epoch:	35	Loss: 1.2646	Acc:0.7086
+
+----------
+Epoch 36/49
+Current Learning rate: [2.8419685622069965e-05]
+train Epoch:	36	Loss: 0.4669	Acc:0.8561
+
+val Epoch:	36	Loss: 1.2786	Acc:0.7075
+
+----------
+Epoch 37/49
+Current Learning rate: [2.4740773326991765e-05]
+train Epoch:	37	Loss: 0.4573	Acc:0.8591
+
+val Epoch:	37	Loss: 1.2841	Acc:0.7055
+
+----------
+Epoch 38/49
+Current Learning rate: [2.1538094156194407e-05]
+train Epoch:	38	Loss: 0.4568	Acc:0.8588
+
+val Epoch:	38	Loss: 1.2580	Acc:0.7090
+
+----------
+Epoch 39/49
+Current Learning rate: [1.875e-05]
+train Epoch:	39	Loss: 0.4496	Acc:0.8623
+
+val Epoch:	39	Loss: 1.2576	Acc:0.7131
+
+----------
+Epoch 40/49
+Current Learning rate: [1.6322823061802324e-05]
+train Epoch:	40	Loss: 0.4485	Acc:0.8622
+
+val Epoch:	40	Loss: 1.2712	Acc:0.7077
+
+----------
+Epoch 41/49
+Current Learning rate: [1.4209842811034978e-05]
+train Epoch:	41	Loss: 0.4424	Acc:0.8631
+
+val Epoch:	41	Loss: 1.2600	Acc:0.7116
+
+----------
+Epoch 42/49
+Current Learning rate: [1.2370386663495886e-05]
+train Epoch:	42	Loss: 0.4407	Acc:0.8633
+
+val Epoch:	42	Loss: 1.2697	Acc:0.7105
+
+----------
+Epoch 43/49
+Current Learning rate: [1.0769047078097203e-05]
+train Epoch:	43	Loss: 0.4405	Acc:0.8635
+
+val Epoch:	43	Loss: 1.2639	Acc:0.7110
+
+----------
+Epoch 44/49
+Current Learning rate: [9.375e-06]
+train Epoch:	44	Loss: 0.4390	Acc:0.8636
+
+val Epoch:	44	Loss: 1.2781	Acc:0.7090
+
+----------
+Epoch 45/49
+Current Learning rate: [8.161411530901162e-06]
+train Epoch:	45	Loss: 0.4378	Acc:0.8646
+
+val Epoch:	45	Loss: 1.2796	Acc:0.7083
+
+----------
+Epoch 46/49
+Current Learning rate: [7.104921405517489e-06]
+train Epoch:	46	Loss: 0.4330	Acc:0.8671
+
+val Epoch:	46	Loss: 1.2676	Acc:0.7111
+
+----------
+Epoch 47/49
+Current Learning rate: [6.185193331747943e-06]
+train Epoch:	47	Loss: 0.4305	Acc:0.8657
+
+val Epoch:	47	Loss: 1.2793	Acc:0.7086
+
+----------
+Epoch 48/49
+Current Learning rate: [5.384523539048602e-06]
+train Epoch:	48	Loss: 0.4325	Acc:0.8669
+
+val Epoch:	48	Loss: 1.2655	Acc:0.7104
+
+----------
+Epoch 49/49
+Current Learning rate: [4.6875e-06]
+train Epoch:	49	Loss: 0.4290	Acc:0.8676
+
+val Epoch:	49	Loss: 1.2744	Acc:0.7100
+
+*** model has been successfully loaded! ***
+val Epoch:	 0	Loss: 1.2575	Acc:0.7132
+
+test Epoch:	 0	Loss: 1.1511	Acc:0.7286
+

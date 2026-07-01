@@ -9,6 +9,7 @@ checkpoint is a plain EMGNet, evaluatable like the baseline).
 """
 import os
 import time
+import random
 import logging
 import argparse
 import numpy as np
@@ -141,9 +142,15 @@ def main():
     parser.add_argument('--epochs', default=200, type=int)
     parser.add_argument('--test', default=False, action='store_true', help='eval val+test from --path, no training')
     parser.add_argument('--path', default='', help='student checkpoint for --test')
+    parser.add_argument('--seed', default=5, type=int, help='random seed (own output folder per seed)')
     args = parser.parse_args()
 
-    save_path = './' + args.mode + '_crosscon_every_frame'
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    torch.cuda.manual_seed(args.seed)
+
+    save_path = './' + args.mode + '_crosscon_every_frame_seed' + str(args.seed)
     os.makedirs(save_path, exist_ok=True)
     logger = logging.getLogger('mylog')
     logger.setLevel(logging.INFO)

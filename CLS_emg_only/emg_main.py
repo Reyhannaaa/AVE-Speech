@@ -14,7 +14,7 @@ from lr_scheduler import *
 from emg_model import *
 from emg_dataset import *
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+os.environ['CUDA_VISIBLE_DEVICES'] = os.environ.get('EMG_GPU', '2')
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 SEED = 5
@@ -147,12 +147,15 @@ def train_test(model, dset_loaders, criterion, epoch, phase, optimizer, args, lo
 
 
 def test_adam(args, use_gpu):
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    torch.cuda.manual_seed(args.seed)
     if args.every_frame and args.mode != 'temporalConv':
-        save_path = './' + args.mode + '_every_frame'
+        save_path = './' + args.mode + '_every_frame_seed' + str(args.seed)
     elif not args.every_frame and args.mode != 'temporalConv':
-        save_path = './' + args.mode + '_last_frame'
+        save_path = './' + args.mode + '_last_frame_seed' + str(args.seed)
     elif args.mode == 'temporalConv':
-        save_path = './' + args.mode
+        save_path = './' + args.mode + '_seed' + str(args.seed)
     else:
         raise Exception('No model is found!')
     if not os.path.isdir(save_path):
@@ -217,9 +220,10 @@ def main():
     parser.add_argument('--epochs', default=200, type=int, help='number of total epochs')
     parser.add_argument('--interval', default=10, type=int, help='display interval')
     parser.add_argument('--test', default=False, action='store_true', help='perform on the test phase')
+    parser.add_argument('--seed', default=5, type=int, help='random seed (own output folder per seed)')
     args = parser.parse_args()
      
-    os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+    os.environ['CUDA_VISIBLE_DEVICES'] = os.environ.get('EMG_GPU', '2')
     use_gpu = torch.cuda.is_available()
     test_adam(args, use_gpu)
 

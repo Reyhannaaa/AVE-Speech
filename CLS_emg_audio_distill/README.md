@@ -1,4 +1,4 @@
-# CLS EMG — audio→EMG crossCon Distillation
+# CLS EMG - audio→EMG crossCon Distillation
 
 The idea here is: EMG-only speech recognition is hard, but during training
 we also have the *audio* of the same sentences sitting right there. So why not let
